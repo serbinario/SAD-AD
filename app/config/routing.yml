@@ -1,0 +1,6 @@
+sadsad_bundle:
+    resource: "@SADSADBundleBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+

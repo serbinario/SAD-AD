@@ -1,0 +1,731 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+    {{parent()}}
+
+<div class="container">
+    <div class="row clearfix">
+        <br />
+        <legend>Cadastro de Emprego</legend>
+        <div class="col-md-13 column">
+            <form role="form"action="saveEmprego"method="POST"class="form-horizontal">
+                <ul class="nav nav-tabs">
+                    <li role="presentation"class="active">
+                        <a href="#dadosPessoais"aria-controls="dadosPessoais"role="tab"data-toggle="tab">
+                            Dados Pessoais</a >
+                    </li >
+                    <li role="presentation">
+                        <a href="#dadosCurriculo"aria-controls="dadosCurriculo"role="tab"data-toggle="tab">
+                            Dados do Currículo</a >
+                    </li >
+                    <li role="presentation">
+                        <a href="#formacaoEscolaridade"aria-controls="formacaoEscolaridade"role="tab"data-toggle="tab">
+                            Formação/Escolaridade</a >
+                    </li >
+                    <li role="presentation">
+                        <a href="#experienciaProfi"aria-controls="experienciaProfi"role="tab"data-toggle="tab">
+                            Experiência Profissional</a >
+                    </li >
+                    <li role="presentation">
+                        <a href="#cursos"aria-controls="cursos"role="tab"data-toggle="tab">
+                            Cursos</a >
+                    </li >
+                    <li role="presentation">
+                        <a href="#informatica"aria-controls="informatica"role="tab"data-toggle="tab">
+                            Informática</a >
+                    </li >
+                    <li role="presentation">
+                        <a href="#qualificacaoFutura"aria-controls="qualificacaoFutura"role="tab"data-toggle="tab">
+                            Qualificação Furtura</a >
+                    </li >
+                    <li role="presentation">
+                        <a href="#84"aria-controls="84"role="tab"data-toggle="tab">
+                            Aviso de Vagas</a >
+                    </li >
+                </ul >
+                <div class="tab-content">
+                    <div class="tab-pane active"id="dadosPessoais">
+                        <br/>
+                        <div class="form-group">
+                            <lable for="nome"class="col-sm-2 control-label">
+                                Nome</lable >
+                            <div class="col-sm-6">
+                                <input name="nome"type="text"class="form-control"id="nome">
+                                </input >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <lable for="cpf"class="col-sm-2 control-label">
+                                CPF</lable >
+                            <div class="col-sm-3">
+                                <input name="cpf"type="text"class="form-control"id="cpf">
+                                </input >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <lable for="rg"class="col-sm-2 control-label">
+                                RG</lable >
+                            <div class="col-sm-3">
+                                <input name="rg"type="text"class="form-control"id="rg">
+                                </input >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <lable for="endereco"class="col-sm-2 control-label">
+                                Endereço</lable >
+                            <div class="col-sm-6">
+                                <input name="endereco"type="text"class="form-control"id="endereco">
+                                </input >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <lable for="bairro"class="col-sm-2 control-label">
+                                Bairro</lable >
+                            <div class="col-sm-6">
+                                <input name="bairro"type="text"class="form-control"id="bairro">
+                                </input >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <lable for="cep"class="col-sm-2 control-label">
+                                CEP</lable >
+                            <div class="col-sm-3">
+                                <input name="cep"type="text"class="form-control"id="cep">
+                                </input >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <lable for="uf"class="col-sm-2 control-label">
+                                UF</lable >
+                            <div class="col-sm-3">
+                                <input name="uf"type="text"class="form-control"id="uf">
+                                </input >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <lable for="cidade"class="col-sm-2 control-label">
+                                Cidade</lable >
+                            <div class="col-sm-3">
+                                <input name="cidade"type="text"class="form-control"id="cidade">
+                                </input >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <lable for="celular"class="col-sm-2 control-label">
+                                Celular</lable >
+                            <div class="col-sm-3">
+                                <input name="celular"type="text"class="form-control"id="celular">
+                                </input >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <lable for="foneResidencial"class="col-sm-2 control-label">
+                                Fone Residencial</lable >
+                            <div class="col-sm-3">
+                                <input name="foneResidencial"type="text"class="form-control"id="foneResidencial">
+                                </input >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <lable for="foneComercial"class="col-sm-2 control-label">
+                                Fone Comercial</lable >
+                            <div class="col-sm-3">
+                                <input name="foneComercial"type="text"class="form-control"id="foneComercial">
+                                </input >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <lable for="email"class="col-sm-2 control-label">
+                                E-mail</lable >
+                            <div class="col-sm-6">
+                                <input name="email"type="text"class="form-control"id="email">
+                                </input >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <lable for="dataNascimento"class="col-sm-2 control-label">
+                                Data Nascimento</lable >
+                            <div class="col-sm-3">
+                                <input name="dataNascimento"type="text"class="form-control"id="dataNascimento">
+                                </input >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">
+                                Sexo</label >
+                            <div class="col-sm-10">
+                                <div class="radio-inline">
+                                    <label >
+                                        <input type="radio"name="Sexo"id="1"value="1">
+                                        </input >
+                                        Masculino</label >
+                                </div >
+                                <div class="radio-inline">
+                                    <label >
+                                        <input type="radio"name="Sexo"id="2"value="2">
+                                        </input >
+                                        Feminino</label >
+                                </div >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <lable for="estadoCivil"class="col-sm-2 control-label">
+                                Estado Civil</lable >
+                            <div class="col-sm-3">
+                                <select name="Estado Civil"id="estadoCivil"class="form-control">
+                                </select >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">
+                                CNH</label >
+                            <div class="col-sm-10">
+                                <div class="radio-inline">
+                                    <label >
+                                        <input type="radio"name="CNH"id="1"value="1">
+                                        </input >
+                                        Sim</label >
+                                </div >
+                                <div class="radio-inline">
+                                    <label >
+                                        <input type="radio"name="CNH"id="2"value="2">
+                                        </input >
+                                        Não</label >
+                                </div >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <lable for="validadeCNH"class="col-sm-2 control-label">
+                                Validade CNH</lable >
+                            <div class="col-sm-3">
+                                <input name="validadeCNH"type="text"class="form-control"id="validadeCNH">
+                                </input >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <lable for="categoriaCNH"class="col-sm-2 control-label">
+                                Categoria CNH</lable >
+                            <div class="col-sm-6">
+                                <input name="categoriaCNH"type="text"class="form-control"id="categoriaCNH">
+                                </input >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <lable for="outrasInfor"class="col-sm-2 control-label">
+                                Outras Infor</lable >
+                            <div class="col-sm-10">
+                                <textarea name="outrasInfor"id="outrasInfor"rows="4"cols="10"maxlength="0"class="form-control">
+                                </textarea >
+                            </div >
+                        </div >
+                    </div >
+                    <div class="tab-pane"id="dadosCurriculo">
+                        <br/>
+                        <div class="form-group">
+                            <lable for="curriculoResumido"class="col-sm-2 control-label">
+                                Resumo Curriculo</lable >
+                            <div class="col-sm-6">
+                                <textarea name="curriculoResumido"id="curriculoResumido"rows="5"cols="10"maxlength="0"class="form-control">
+                                </textarea >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <lable for="pretensaoSalarial"class="col-sm-2 control-label">
+                                Pret. Salarial</lable >
+                            <div class="col-sm-3">
+                                <input name="pretensaoSalarial"type="text"class="form-control"id="pretensaoSalarial">
+                                </input >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">
+                                Atual. Empregado</label >
+                            <div class="col-sm-10">
+                                <div class="radio-inline">
+                                    <label >
+                                        <input type="radio"name="Atualmente Empregado"id="1"value="1">
+                                        </input >
+                                        Sim</label >
+                                </div >
+                                <div class="radio-inline">
+                                    <label >
+                                        <input type="radio"name="Atualmente Empregado"id="2"value="2">
+                                        </input >
+                                        Não</label >
+                                </div >
+                            </div >
+                        </div >
+                    </div >
+                    <div class="tab-pane"id="formacaoEscolaridade">
+                        <br/>
+                        <div class="form-group">
+                            <lable for="grauDeFormacao"class="col-sm-2 control-label">
+                                Grau de Formação</lable >
+                            <div class="col-sm-6">
+                                <input name="grauDeFormacao"type="text"class="form-control"id="grauDeFormacao">
+                                </input >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <lable for="nomeDoCurso"class="col-sm-2 control-label">
+                                Nome do Curso</lable >
+                            <div class="col-sm-6">
+                                <input name="nomeDoCurso"type="text"class="form-control"id="nomeDoCurso">
+                                </input >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <lable for="Instituicao"class="col-sm-2 control-label">
+                                Intituição</lable >
+                            <div class="col-sm-6">
+                                <input name="Instituicao"type="text"class="form-control"id="Instituicao">
+                                </input >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <lable for="dataInicio"class="col-sm-2 control-label">
+                                Data de Início</lable >
+                            <div class="col-sm-3">
+                                <input name="dataInicio"type="text"class="form-control"id="dataInicio">
+                                </input >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <lable for="dataConlusao"class="col-sm-2 control-label">
+                                Data Conlusão</lable >
+                            <div class="col-sm-3">
+                                <input name="dataConlusao"type="text"class="form-control"id="dataConlusao">
+                                </input >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <lable for="anoCursando"class="col-sm-2 control-label">
+                                Ano que está cursando</lable >
+                            <div class="col-sm-3">
+                                <input name="anoCursando"type="text"class="form-control"id="anoCursando">
+                                </input >
+                            </div >
+                        </div >
+                    </div >
+                    <div class="tab-pane"id="experienciaProfi">
+                        <br/>
+                        <div class="form-group">
+                            <lable for="nomeEmpresa"class="col-sm-2 control-label">
+                                Nome da Empresa</lable >
+                            <div class="col-sm-6">
+                                <input name="nomeEmpresa"type="text"class="form-control"id="nomeEmpresa">
+                                </input >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <lable for="ultimoCargo"class="col-sm-2 control-label">
+                                Ultimo Cargo</lable >
+                            <div class="col-sm-6">
+                                <input name="ultimoCargo"type="text"class="form-control"id="ultimoCargo">
+                                </input >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <lable for="ultimoSalario"class="col-sm-2 control-label">
+                                Ultimo Salário</lable >
+                            <div class="col-sm-3">
+                                <input name="ultimoSalario"type="text"class="form-control"id="ultimoSalario">
+                                </input >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <lable for="dataAdmissao"class="col-sm-2 control-label">
+                                Data Admissão</lable >
+                            <div class="col-sm-3">
+                                <input name="dataAdmissao"type="text"class="form-control"id="dataAdmissao">
+                                </input >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <lable for="dataDmissao"class="col-sm-2 control-label">
+                                Data Demissão</lable >
+                            <div class="col-sm-3">
+                                <input name="dataDmissao"type="text"class="form-control"id="dataDmissao">
+                                </input >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <lable for="atribuicaoRealizacoes"class="col-sm-2 control-label">
+                                Atritribuições/Realizações</lable >
+                            <div class="col-sm-10">
+                                <textarea name="Atribuições/ Realizações"id="atribuicaoRealizacoes"rows="4"cols="10"maxlength="0"class="form-control">
+                                </textarea >
+                            </div >
+                        </div >
+                    </div >
+                    <div class="tab-pane"id="cursos">
+                        <br/>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">
+                                Espanhol</label >
+                            <div class=" col-sm-10">
+                                <div class="checkbox-inline">
+                                    <label >
+                                        <input type="checkbox"name="espanhol[]"id="espanhol[]0"value="1">
+                                        </input >
+                                        Noção</label >
+                                </div >
+                                <div class="checkbox-inline">
+                                    <label >
+                                        <input type="checkbox"name="espanhol[]"id="espanhol[]1"value="2">
+                                        </input >
+                                        Fluência</label >
+                                </div >
+                                <div class="checkbox-inline">
+                                    <label >
+                                        <input type="checkbox"name="espanhol[]"id="espanhol[]2"value="3">
+                                        </input >
+                                        Redaçao</label >
+                                </div >
+                                <div class="checkbox-inline">
+                                    <label >
+                                        <input type="checkbox"name="espanhol[]"id="espanhol[]3"value="4">
+                                        </input >
+                                        Traduçao</label >
+                                </div >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">
+                                Inglês</label >
+                            <div class=" col-sm-10">
+                                <div class="checkbox-inline">
+                                    <label >
+                                        <input type="checkbox"name="ingles[]"id="ingles[]0"value="1">
+                                        </input >
+                                        Noçao</label >
+                                </div >
+                                <div class="checkbox-inline">
+                                    <label >
+                                        <input type="checkbox"name="ingles[]"id="ingles[]1"value="2">
+                                        </input >
+                                        Fluência</label >
+                                </div >
+                                <div class="checkbox-inline">
+                                    <label >
+                                        <input type="checkbox"name="ingles[]"id="ingles[]2"value="3">
+                                        </input >
+                                        Redaçao</label >
+                                </div >
+                                <div class="checkbox-inline">
+                                    <label >
+                                        <input type="checkbox"name="ingles[]"id="ingles[]3"value="4">
+                                        </input >
+                                        Traduçao</label >
+                                </div >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">
+                                Italiano</label >
+                            <div class=" col-sm-10">
+                                <div class="checkbox-inline">
+                                    <label >
+                                        <input type="checkbox"name="italiano[]"id="italiano[]0"value="1">
+                                        </input >
+                                        Noçao</label >
+                                </div >
+                                <div class="checkbox-inline">
+                                    <label >
+                                        <input type="checkbox"name="italiano[]"id="italiano[]1"value="2">
+                                        </input >
+                                        Fluência</label >
+                                </div >
+                                <div class="checkbox-inline">
+                                    <label >
+                                        <input type="checkbox"name="italiano[]"id="italiano[]2"value="3">
+                                        </input >
+                                        Redaçao</label >
+                                </div >
+                                <div class="checkbox-inline">
+                                    <label >
+                                        <input type="checkbox"name="italiano[]"id="italiano[]3"value="4">
+                                        </input >
+                                        Traduçao</label >
+                                </div >
+                            </div >
+                        </div >
+                    </div >
+                    <div class="tab-pane"id="informatica">
+                        <br/>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">
+                                Design</label >
+                            <div class="col-sm-10">
+                                <div class="radio-inline">
+                                    <label >
+                                        <input type="radio"name="design"id="1"value="1">
+                                        </input >
+                                        Básico</label >
+                                </div >
+                                <div class="radio-inline">
+                                    <label >
+                                        <input type="radio"name="design"id="2"value="2">
+                                        </input >
+                                        Intermediário</label >
+                                </div >
+                                <div class="radio-inline">
+                                    <label >
+                                        <input type="radio"name="design"id="3"value="3">
+                                        </input >
+                                        Avançado</label >
+                                </div >
+                                <div class="radio-inline">
+                                    <label >
+                                        <input type="radio"name="design"id="4"value="4">
+                                        </input >
+                                        Desmarcar</label >
+                                </div >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">
+                                Linux</label >
+                            <div class="col-sm-10">
+                                <div class="radio-inline">
+                                    <label >
+                                        <input type="radio"name="linux"id="1"value="1">
+                                        </input >
+                                        Básico</label >
+                                </div >
+                                <div class="radio-inline">
+                                    <label >
+                                        <input type="radio"name="linux"id="2"value="2">
+                                        </input >
+                                        Intermediário</label >
+                                </div >
+                                <div class="radio-inline">
+                                    <label >
+                                        <input type="radio"name="linux"id="3"value="3">
+                                        </input >
+                                        Avançado</label >
+                                </div >
+                                <div class="radio-inline">
+                                    <label >
+                                        <input type="radio"name="linux"id="4"value="4">
+                                        </input >
+                                        Desmarcar</label >
+                                </div >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">
+                                Montagem / Manutenção</label >
+                            <div class="col-sm-10">
+                                <div class="radio-inline">
+                                    <label >
+                                        <input type="radio"name="montagemManuten"id="1"value="1">
+                                        </input >
+                                        Básico</label >
+                                </div >
+                                <div class="radio-inline">
+                                    <label >
+                                        <input type="radio"name="montagemManuten"id="2"value="2">
+                                        </input >
+                                        Intermediário</label >
+                                </div >
+                                <div class="radio-inline">
+                                    <label >
+                                        <input type="radio"name="montagemManuten"id="3"value="3">
+                                        </input >
+                                        Avançado</label >
+                                </div >
+                                <div class="radio-inline">
+                                    <label >
+                                        <input type="radio"name="montagemManuten"id="4"value="4">
+                                        </input >
+                                        Desmarcar</label >
+                                </div >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">
+                                Pacote Office</label >
+                            <div class="col-sm-10">
+                                <div class="radio-inline">
+                                    <label >
+                                        <input type="radio"name="pacoteOffice"id="1"value="1">
+                                        </input >
+                                        Básico</label >
+                                </div >
+                                <div class="radio-inline">
+                                    <label >
+                                        <input type="radio"name="pacoteOffice"id="2"value="2">
+                                        </input >
+                                        Intermediário</label >
+                                </div >
+                                <div class="radio-inline">
+                                    <label >
+                                        <input type="radio"name="pacoteOffice"id="3"value="3">
+                                        </input >
+                                        Avançado</label >
+                                </div >
+                                <div class="radio-inline">
+                                    <label >
+                                        <input type="radio"name="pacoteOffice"id="4"value="4">
+                                        </input >
+                                        Desmarcar</label >
+                                </div >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">
+                                Programação</label >
+                            <div class="col-sm-10">
+                                <div class="radio-inline">
+                                    <label >
+                                        <input type="radio"name="programacao"id="1"value="1">
+                                        </input >
+                                        Básico</label >
+                                </div >
+                                <div class="radio-inline">
+                                    <label >
+                                        <input type="radio"name="programacao"id="2"value="2">
+                                        </input >
+                                        Intermediário</label >
+                                </div >
+                                <div class="radio-inline">
+                                    <label >
+                                        <input type="radio"name="programacao"id="3"value="3">
+                                        </input >
+                                        Avançado</label >
+                                </div >
+                                <div class="radio-inline">
+                                    <label >
+                                        <input type="radio"name="programacao"id="4"value="4">
+                                        </input >
+                                        Desmarcar</label >
+                                </div >
+                            </div >
+                        </div >
+                    </div >
+                    <div class="tab-pane"id="qualificacaoFutura">
+                        <br/>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">
+                                Escolar</label >
+                            <div class=" col-sm-10">
+                                <div class="checkbox-inline">
+                                    <label >
+                                        <input type="checkbox"name="escolar"id="escolar0"value="1">
+                                        </input >
+                                        Escolar</label >
+                                </div >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">
+                                Profissional</label >
+                            <div class=" col-sm-10">
+                                <div class="checkbox-inline">
+                                    <label >
+                                        <input type="checkbox"name="profissional"id="profissional0"value="1">
+                                        </input >
+                                        Profissional</label >
+                                </div >
+                            </div >
+                        </div >
+                    </div >
+                    <div class="tab-pane"id="84">
+                        <br/>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">
+                                Horário de Trabalho</label >
+                            <div class=" col-sm-10">
+                                <div class="checkbox-inline">
+                                    <label >
+                                        <input type="checkbox"name="horarioTrabalho[]"id="horarioTrabalho[]0"value="1">
+                                        </input >
+                                        Madrugada</label >
+                                </div >
+                                <div class="checkbox-inline">
+                                    <label >
+                                        <input type="checkbox"name="horarioTrabalho[]"id="horarioTrabalho[]1"value="2">
+                                        </input >
+                                        Manhã</label >
+                                </div >
+                                <div class="checkbox-inline">
+                                    <label >
+                                        <input type="checkbox"name="horarioTrabalho[]"id="horarioTrabalho[]2"value="3">
+                                        </input >
+                                        Noite</label >
+                                </div >
+                                <div class="checkbox-inline">
+                                    <label >
+                                        <input type="checkbox"name="horarioTrabalho[]"id="horarioTrabalho[]3"value="4">
+                                        </input >
+                                        Tarde</label >
+                                </div >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <lable for="areaProfissional"class="col-sm-2 control-label">
+                                Área Profissional</lable >
+                            <div class="col-sm-6">
+                                <input name="areaProfissional"type="text"class="form-control"id="areaProfissional">
+                                </input >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <lable for="cargoDesejado"class="col-sm-2 control-label">
+                                Cargo desejado</lable >
+                            <div class="col-sm-6">
+                                <input name="cargoDesejado"type="text"class="form-control"id="cargoDesejado">
+                                </input >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">
+                                Nível Hierárquico</label >
+                            <div class="col-sm-10">
+                                <div class="radio">
+                                    <label >
+                                        <input type="radio"name="nivelHierarquico"id="1"value="1">
+                                        </input >
+                                        Diretoria</label >
+                                </div >
+                                <div class="radio">
+                                    <label >
+                                        <input type="radio"name="nivelHierarquico"id="2"value="2">
+                                        </input >
+                                        Gerência</label >
+                                </div >
+                                <div class="radio">
+                                    <label >
+                                        <input type="radio"name="nivelHierarquico"id="3"value="3">
+                                        </input >
+                                        Operacional</label >
+                                </div >
+                                <div class="radio">
+                                    <label >
+                                        <input type="radio"name="nivelHierarquico"id="4"value="4">
+                                        </input >
+                                        Supervisão</label >
+                                </div >
+                                <div class="radio">
+                                    <label >
+                                        <input type="radio"name="nivelHierarquico"id="5"value="5">
+                                        </input >
+                                        Vendas</label >
+                                </div >
+                            </div >
+                        </div >
+                    </div >
+                </div >
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit"class="btn btn-primary">
+                            Salvar</button >
+                    </div >
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

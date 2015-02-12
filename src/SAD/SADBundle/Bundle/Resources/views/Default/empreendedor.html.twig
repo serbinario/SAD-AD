@@ -1,0 +1,418 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+    {{parent()}}
+
+<div class="container">
+    <div class="row clearfix">
+        <br />
+        <legend>Cadastro de Empreendedor</legend>
+        <div class="col-md-12 column">
+            <form role="form"action="saveEmpreendedor"method="POST"class="form-horizontal">
+                <ul class="nav nav-tabs">
+                    <li role="presentation"class="active">
+                        <a href="#identificacaoPessoal"aria-controls="identificacaoPessoal"role="tab"data-toggle="tab">
+                            Identificação Pessoal</a >
+                    </li >
+                    <li role="presentation">
+                        <a href="#identificacaoAtividade"aria-controls="identificacaoAtividade"role="tab"data-toggle="tab">
+                            Identificação de Atividade</a >
+                    </li >
+                    <li role="presentation">
+                        <a href="#identificacaoNecessidade"aria-controls="identificacaoNecessidade"role="tab"data-toggle="tab">
+                            Identificação de Necessidade</a >
+                    </li >
+                </ul >
+                <div class="tab-content">
+                    <div class="tab-pane active"id="identificacaoPessoal">
+                        <br/>
+                        <div class="form-group">
+                            <lable for="nome"class="col-sm-2 control-label">
+                                Nome</lable >
+                            <div class="col-sm-6">
+                                <input name="nome"type="text"class="form-control"id="nome">
+                                </input >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <lable for="endereco"class="col-sm-2 control-label">
+                                Endereço</lable >
+                            <div class="col-sm-6">
+                                <input name="endereco"type="text"class="form-control"id="endereco">
+                                </input >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <lable for="telefone"class="col-sm-2 control-label">
+                                Telefone</lable >
+                            <div class="col-sm-3">
+                                <input name="telefone"type="text"class="form-control"id="telefone">
+                                </input >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <lable for="idade"class="col-sm-2 control-label">
+                                Idade</lable >
+                            <div class="col-sm-2">
+                                <input name="idade"type="text"class="form-control"id="idade">
+                                </input >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">
+                                Escolaridade</label >
+                            <div class="col-sm-10">
+                                <div class="radio-inline">
+                                    <label >
+                                        <input type="radio"name="escolaridade"id="1"value="1">
+                                        </input >
+                                        FUND. INCOMP.</label >
+                                </div >
+                                <div class="radio-inline">
+                                    <label >
+                                        <input type="radio"name="escolaridade"id="2"value="2">
+                                        </input >
+                                        FUND. COMPL.</label >
+                                </div >
+                                <div class="radio-inline">
+                                    <label >
+                                        <input type="radio"name="escolaridade"id="3"value="3">
+                                        </input >
+                                        MÉDIO INCOMP.</label >
+                                </div >
+                                <div class="radio-inline">
+                                    <label >
+                                        <input type="radio"name="escolaridade"id="4"value="4">
+                                        </input >
+                                        MÉDIO COMPL</label >
+                                </div >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <lable for="experienciaProf"class="col-sm-2 control-label">
+                                Experiência Profissional</lable >
+                            <div class="col-sm-6">
+                                <input name="experienciaProf"type="text"class="form-control"id="experienciaProf">
+                                </input >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <lable for="quantoTempo"class="col-sm-2 control-label">
+                                Quanto Tempo</lable >
+                            <div class="col-sm-3">
+                                <input name="quantoTempo"type="text"class="form-control"id="quantoTempo">
+                                </input >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <lable for="outraRendaPessoal"class="col-sm-2 control-label">
+                                Outra Renda Pessoal</lable >
+                            <div class="col-sm-3">
+                                <input name="outraRendaPessoal"type="text"class="form-control"id="outraRendaPessoal">
+                                </input >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">
+                                Renda Pessoal</label >
+                            <div class="col-sm-10">
+                                <div class="radio-inline">
+                                    <label >
+                                        <input type="radio"name="rendaFamiliar"id="1"value="1">
+                                        </input >
+                                        Do Negócio</label >
+                                </div >
+                                <div class="radio-inline">
+                                    <label >
+                                        <input type="radio"name="rendaFamiliar"id="2"value="2">
+                                        </input >
+                                        Esposa</label >
+                                </div >
+                                <div class="radio-inline">
+                                    <label >
+                                        <input type="radio"name="rendaFamiliar"id="3"value="3">
+                                        </input >
+                                        Filhos</label >
+                                </div >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <lable for="cursoProfissionalizante"class="col-sm-2 control-label">
+                                Cursos Profissionalizante</lable >
+                            <div class="col-sm-6">
+                                <input name="cursoProfissionalizante"type="text"class="form-control"id="cursoProfissionalizante">
+                                </input >
+                            </div >
+                        </div >
+                    </div >
+                    <div class="tab-pane"id="identificacaoAtividade">
+                        <br/>
+                        <div class="form-group">
+                            <lable for="nomeEmpresa"class="col-sm-2 control-label">
+                                Nome da Empresa</lable >
+                            <div class="col-sm-6">
+                                <input name="nomeEmpresa"type="text"class="form-control"id="nomeEmpresa">
+                                </input >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <lable for="enderecoAtividade"class="col-sm-2 control-label">
+                                Endereço da Atividade</lable >
+                            <div class="col-sm-6">
+                                <input name="enderecoAtividade"type="text"class="form-control"id="enderecoAtividade">
+                                </input >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">
+                                Tipo</label >
+                            <div class="col-sm-10">
+                                <div class="radio-inline">
+                                    <label >
+                                        <input type="radio"name="tipo"id="1"value="1">
+                                        </input >
+                                        Informal</label >
+                                </div >
+                                <div class="radio-inline">
+                                    <label >
+                                        <input type="radio"name="tipo"id="2"value="2">
+                                        </input >
+                                        Formal</label >
+                                </div >
+                                <div class="radio-inline">
+                                    <label >
+                                        <input type="radio"name="tipo"id="3"value="3">
+                                        </input >
+                                        MEI</label >
+                                </div >
+                                <div class="radio-inline">
+                                    <label >
+                                        <input type="radio"name="tipo"id="4"value="4">
+                                        </input >
+                                        Microempresa</label >
+                                </div >
+                                <div class="radio-inline">
+                                    <label >
+                                        <input type="radio"name="tipo"id="5"value="5">
+                                        </input >
+                                        Empresa</label >
+                                </div >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">
+                                Ramo de Negócio</label >
+                            <div class=" col-sm-10">
+                                <div class="checkbox-inline">
+                                    <label >
+                                        <input type="checkbox"name="ramoNegocio[]"id="ramoNegocio[]0"value="1">
+                                        </input >
+                                        Comércio</label >
+                                </div >
+                                <div class="checkbox-inline">
+                                    <label >
+                                        <input type="checkbox"name="ramoNegocio[]"id="ramoNegocio[]1"value="2">
+                                        </input >
+                                        Serviço</label >
+                                </div >
+                                <div class="checkbox-inline">
+                                    <label >
+                                        <input type="checkbox"name="ramoNegocio[]"id="ramoNegocio[]2"value="3">
+                                        </input >
+                                        Indústria</label >
+                                </div >
+                                <div class="checkbox-inline">
+                                    <label >
+                                        <input type="checkbox"name="ramoNegocio[]"id="ramoNegocio[]3"value="4">
+                                        </input >
+                                        Artesanato</label >
+                                </div >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <lable for="equipamentoQueUtiliza"class="col-sm-2 control-label">
+                                Equipamento que utiliza</lable >
+                            <div class="col-sm-6">
+                                <input name="equipamentoQueUtiliza"type="text"class="form-control"id="equipamentoQueUtiliza">
+                                </input >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <lable for="tempoAtividade"class="col-sm-2 control-label">
+                                Tempo de Atividade</lable >
+                            <div class="col-sm-3">
+                                <input name="tempoAtividade"type="text"class="form-control"id="tempoAtividade">
+                                </input >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">
+                                Quantidade de Pessoas Envolvidas</label >
+                            <div class="col-sm-10">
+                                <div class="radio-inline">
+                                    <label >
+                                        <input type="radio"name="qtdPessoasEnvolvidas"id="1"value="1">
+                                        </input >
+                                        01</label >
+                                </div >
+                                <div class="radio-inline">
+                                    <label >
+                                        <input type="radio"name="qtdPessoasEnvolvidas"id="2"value="2">
+                                        </input >
+                                        02</label >
+                                </div >
+                                <div class="radio-inline">
+                                    <label >
+                                        <input type="radio"name="qtdPessoasEnvolvidas"id="3"value="3">
+                                        </input >
+                                        03</label >
+                                </div >
+                                <div class="radio-inline">
+                                    <label >
+                                        <input type="radio"name="qtdPessoasEnvolvidas"id="4"value="4">
+                                        </input >
+                                        Acima de 03</label >
+                                </div >
+                            </div >
+                        </div >
+                    </div >
+                    <div class="tab-pane"id="identificacaoNecessidade">
+                        <br/>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">
+                                Crédito</label >
+                            <div class="col-sm-10">
+                                <div class="radio-inline">
+                                    <label >
+                                        <input type="radio"name="credito"id="1"value="1">
+                                        </input >
+                                        GIRO</label >
+                                </div >
+                                <div class="radio-inline">
+                                    <label >
+                                        <input type="radio"name="credito"id="2"value="2">
+                                        </input >
+                                        EQUIP.</label >
+                                </div >
+                                <div class="radio-inline">
+                                    <label >
+                                        <input type="radio"name="credito"id="3"value="3">
+                                        </input >
+                                        MISTO</label >
+                                </div >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <lable for="consultoria"class="col-sm-2 control-label">
+                                Consultoria</lable >
+                            <div class="col-sm-6">
+                                <input name="consultoria"type="text"class="form-control"id="consultoria">
+                                </input >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">
+                                Capacitação</label >
+                            <div class=" col-sm-10">
+                                <div class="checkbox-inline">
+                                    <label >
+                                        <input type="checkbox"name="capacitacao[]"id="capacitacao[]0"value="1">
+                                        </input >
+                                        Empreendedora</label >
+                                </div >
+                                <div class="checkbox-inline">
+                                    <label >
+                                        <input type="checkbox"name="capacitacao[]"id="capacitacao[]1"value="2">
+                                        </input >
+                                        Marketing</label >
+                                </div >
+                                <div class="checkbox-inline">
+                                    <label >
+                                        <input type="checkbox"name="capacitacao[]"id="capacitacao[]2"value="3">
+                                        </input >
+                                        Gestão</label >
+                                </div >
+                                <div class="checkbox-inline">
+                                    <label >
+                                        <input type="checkbox"name="capacitacao[]"id="capacitacao[]3"value="4">
+                                        </input >
+                                        Custos</label >
+                                </div >
+                                <div class="checkbox-inline">
+                                    <label >
+                                        <input type="checkbox"name="capacitacao[]"id="capacitacao[]4"value="5">
+                                        </input >
+                                        Vendas</label >
+                                </div >
+                                <div class="checkbox-inline">
+                                    <label >
+                                        <input type="checkbox"name="capacitacao[]"id="capacitacao[]5"value="6">
+                                        </input >
+                                        Técnica</label >
+                                </div >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">
+                                Qualificação</label >
+                            <div class=" col-sm-10">
+                                <div class="checkbox-inline">
+                                    <label >
+                                        <input type="checkbox"name="qualificacao[]"id="qualificacao[]0"value="1">
+                                        </input >
+                                        Padeiro</label >
+                                </div >
+                                <div class="checkbox-inline">
+                                    <label >
+                                        <input type="checkbox"name="qualificacao[]"id="qualificacao[]1"value="2">
+                                        </input >
+                                        Informática Básica</label >
+                                </div >
+                                <div class="checkbox-inline">
+                                    <label >
+                                        <input type="checkbox"name="qualificacao[]"id="qualificacao[]2"value="3">
+                                        </input >
+                                        Macineiro</label >
+                                </div >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">
+                                Formalização</label >
+                            <div class="col-sm-10">
+                                <div class="radio-inline">
+                                    <label >
+                                        <input type="radio"name="formalizacao"id="1"value="1">
+                                        </input >
+                                        MEI</label >
+                                </div >
+                                <div class="radio-inline">
+                                    <label >
+                                        <input type="radio"name="formalizacao"id="2"value="2">
+                                        </input >
+                                        Microempresa</label >
+                                </div >
+                            </div >
+                        </div >
+                        <div class="form-group">
+                            <lable for="historico"class="col-sm-2 control-label">
+                                Histórico</lable >
+                            <div class="col-sm-8">
+                                <input name="historico"type="text"class="form-control"id="historico">
+                                </input >
+                            </div >
+                        </div >
+                    </div >
+                </div >
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit"class="btn btn-primary">
+                            Salvar</button >
+                    </div >
+                </div >
+            </form >
+        </div >
+    </div >
+</div >
+
+{% endblock %}
